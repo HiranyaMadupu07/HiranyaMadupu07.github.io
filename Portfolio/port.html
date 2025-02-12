@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-items: center;
+            position:sticky;
+            scroll-behavior: smooth;
+            background-color: bisque;
+        }
+        .header-box{
+          position: sticky;
+        }
+
+        .header li {
+            display: inline;
+            font-size: larger;
+            padding: 5px;
+        }
+
+        .header a {
+            text-decoration: none;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .row1{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding:50px;
+            align-items: center;
+            background-color: rgb(81, 232, 232);
+            height:600px;
+      padding: 100px;
+      height: 75%;
+    }
+
+    .row .box {
+      padding: 5px;
+      margin: 20px;
+    }
+    .footer {
+      padding: 20px;
+      margin: 0px;
+      background-color: black;
+      color: white;
+      font-size: large;
+    }
+    .row {
+        height:600px;
+      padding: 100px;
+      height: 75%;
+      margin:auto;
+    }
+    .container {
+      position: fixed;
+      overflow: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      scroll-behavior: smooth;
+      height: 100%;
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Hiranya Madupu</h1>
+            </div>
+            <div class="box">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row1" id="home">
+           
+            <div class="box">
+                <h2>Full Stack Developer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus id, quidem culpa unde, consequatur
+                    autem ad nihil voluptatibus eaque ab asperiores, omnis laboriosam fuga dignissimos iure soluta
+                    aliquid error vitae.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus id, quidem culpa unde, consequatur
+                        autem ad nihil voluptatibus eaque ab asperiores, omnis laboriosam fuga dignissimos iure soluta
+                        aliquid error vitae.</p>
+                <button>Button 1</button>
+                <button>Button 2</button>
+                        
+            </div>
+            <div>
+                <img src="assets/1.jpeg" width="500px">
+            </div>
+        </div>
+
+
+        <div id="projects" class="row" style="background-color: rgb(120, 239, 185)">
+            <h1>Projects</h1>
+            <div style="display: flex">
+              <div class="box">
+                <h3><a href="project1/pro1.html">Project1</a></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+                  Perspiciatis, ab.
+                </p>
+              </div>
+    
+              <div class="box">
+                <h3><a href="project2/pro2.html">Project2</a></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+                  Perspiciatis, ab.
+                </p>
+              </div>
+    
+              <div class="box">
+                <h3><a href="#">Project3</a></h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+                  Perspiciatis, ab.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="services" class="row" style="background-color: rgb(236, 203, 131)">
+            <h1>Services</h1>
+            <div style="display: flex">
+              <div class="box">
+                <h3>Web App Development</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+                  Perspiciatis, ab.
+                </p>
+              </div>
+    
+              <div class="box">
+                <h3>Mobile App Development</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+                  Perspiciatis, ab.
+                </p>
+              </div>
+    
+              <div class="box">
+                <h3>Backend Development</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+                  Perspiciatis, ab.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="about" class="row" style=background-color:pink>
+            <h1>About</h1>
+            <h3>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint
+              optio labore a obcaecati. Ullam distinctio corrupti autem. Veritatis
+              ipsa veniam deserunt asperiores nesciunt at provident itaque
+              cupiditate vel dolor.
+            </h3>
+            <h2>Skills</h2>
+            <h3>Java, Python, Reactjs</h3>
+            <p>Display the logo of all the technologies you know.</p>
+          </div>
+          <div
+            id="contact"
+            class="row"
+            style="background-color: lightgoldenrodyellow"
+          >
+            <h1>Contact</h1>
+            <div style="display: flex">
+             
+    
+              <div class="box " >
+                <h3>Contact Form</h3>
+                <p>
+                 <input type="text" placeholder="Enter Name">
+                </p>
+                <p>
+                  <input type="email" placeholder="Enter Email">
+                 </p>
+                 <p>
+                  <textarea rows="10" cols="60" placeholder="Enter message"></textarea>
+                 </p>
+                 <button>Send</button>
+              </div>
+    
+              <div class="box,row1">
+                <h3>Your/Company Name</h3>
+                <p>
+                  <b>Address: </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
+                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
+                  Perspiciatis, ab.
+                </p>
+                <p>
+                  <b>Email Address: </b>sample@email.com
+                </p>
+                <p>
+                  <b>Phone Number: </b>+91 343 445 6789
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="footer" style="background-color:black"><marquee>@copyright 2024. All rights reserved.</marquee></div>
+    </div>
+</body>
+
+</html>
