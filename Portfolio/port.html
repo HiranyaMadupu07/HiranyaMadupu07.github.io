@@ -47,6 +47,9 @@
     .row .box {
       padding: 5px;
       margin: 20px;
+      background-color: white;
+      align-content: center;
+     
     }
     .footer {
       padding: 20px;
@@ -60,6 +63,7 @@
       padding: 100px;
       height: 75%;
       margin:auto;
+      
     }
     .container {
       position: fixed;
@@ -71,6 +75,11 @@
       scroll-behavior: smooth;
       height: 100%;
     }
+    h3{
+      font-size: larger;
+      color:rgb(4, 4, 60);
+    }
+    
 
     </style>
 
@@ -96,19 +105,14 @@
         <div class="row1" id="home">
            
             <div class="box">
+              <h1>Hi,Iam Hiranya Madupu!!</h1>
                 <h2>Full Stack Developer</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus id, quidem culpa unde, consequatur
-                    autem ad nihil voluptatibus eaque ab asperiores, omnis laboriosam fuga dignissimos iure soluta
-                    aliquid error vitae.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus id, quidem culpa unde, consequatur
-                        autem ad nihil voluptatibus eaque ab asperiores, omnis laboriosam fuga dignissimos iure soluta
-                        aliquid error vitae.</p>
-                <button>Button 1</button>
-                <button>Button 2</button>
+                <button style="background-color: rgb(5, 53, 92);color: white;padding: 7px; border:none;border-radius: 5px;">Portfolio</button>
+                <button style="background-color: rgb(5, 53, 92);color: white;padding: 7px; border:none;border-radius: 5px;">Resume</button>
                         
             </div>
             <div>
-                <img src="assets/1.jpeg" width="500px">
+                <img src="assets/port.jpg" width="420px" height="500px">
             </div>
         </div>
 
@@ -116,8 +120,9 @@
         <div id="projects" class="row" style="background-color: rgb(120, 239, 185)">
             <h1>Projects</h1>
             <div style="display: flex">
-              <div class="box">
-                <h3><a href="project1/pro1.html">Project1</a></h3>
+              <div class="box"><center>
+                <div><img src="assets/mystore.png" width="200px" height="200px"></div>
+                <h3><a href="project1/pro1.html">Project1</a></h3></center>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
                   quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
@@ -126,8 +131,9 @@
                 </p>
               </div>
     
-              <div class="box">
-                <h3><a href="project2/pro2.html">Project2</a></h3>
+              <div class="box"><center>
+                <div><img src="assets/mybank.png" width="200px" height="200px"></div>
+                <h3><a href="project2/pro2.html">Project2</a></h3></center>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
                   quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
@@ -136,8 +142,9 @@
                 </p>
               </div>
     
-              <div class="box">
-                <h3><a href="project3/pro3.html">Project3</a></h3>
+              <div class="box"><center>
+                <div><img src="assets/myshop.png" width="200px" height="200px"></div>
+                <h3><a href="project3/pro3.html">Project3</a></h3></center>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
                   quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
@@ -149,36 +156,28 @@
           </div>
 
 
-          <div id="services" class="row" style="background-color: rgb(236, 203, 131)">
+          <div id="services" class="row" style="background-color: white">
             <h1>Services</h1>
-            <div style="display: flex">
+            <div style="display: flex; justify-content: space-between;">
+              
               <div class="box">
-                <h3>Web App Development</h3>
+                <h3>    Web App Development</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-                  Perspiciatis, ab.
+                  <img src="assets/webapp.png" width="250px" height="200px">
+                </p>
+              </div>
+
+              <div class="box">
+                <h3>     Mobile App Development</h3>
+                <p>
+                  <img src="assets/mobileapp.png" width="250px" height="200px">
                 </p>
               </div>
     
               <div class="box">
-                <h3>Mobile App Development</h3>
+                <h3>     Backend Development</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-                  Perspiciatis, ab.
-                </p>
-              </div>
-    
-              <div class="box">
-                <h3>Backend Development</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-                  Perspiciatis, ab.
+                  <img src="assets/backnd.webp" width="250px" height="200px">
                 </p>
               </div>
             </div>
@@ -186,16 +185,16 @@
 
 
           <div id="about" class="row" style=background-color:pink>
-            <h1>About</h1>
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sint
-              optio labore a obcaecati. Ullam distinctio corrupti autem. Veritatis
-              ipsa veniam deserunt asperiores nesciunt at provident itaque
-              cupiditate vel dolor.
-            </h3>
+            <br><br><br>
+            <h1>About me</h1>
+            <p>
+              Enthusiastic Full Stack Developer known for passion, patience, and smart work. Demonstrates a unique blend of technical prowess and problem-solving, committed to delivering seamless and innovative solutions.
+            </p><br><br>
+            
+            <br>
+            <br>
             <h2>Skills</h2>
-            <h3>Java, Python, Reactjs</h3>
-            <p>Display the logo of all the technologies you know.</p>
+            <p>Java, Python, Reactjs</p>
           </div>
           <div
             id="contact"
@@ -219,20 +218,17 @@
                  </p>
                  <button>Send</button>
               </div>
-    
+    <hr/>
               <div class="box,row1">
-                <h3>Your/Company Name</h3>
+                <h3>Contact Info</h3>
                 <p>
-                  <b>Address: </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                  quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-                  aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-                  Perspiciatis, ab.
+                  <b>Address: </b>Hyderabad,India.
                 </p>
                 <p>
-                  <b>Email Address: </b>sample@email.com
+                  <b>Email Address: </b>xxxxxxxxxx@email.com
                 </p>
                 <p>
-                  <b>Phone Number: </b>+91 343 445 6789
+                  <b>Phone Number: </b>+91 xxxxxxxxxxx
                 </p>
               </div>
             </div>
