@@ -7,7 +7,8 @@
     <style>
         
         .header{
-            font-size:25px;
+            font-size:45px;
+            font-style: oblique;
             color: rgb(211, 53, 214);
             font-weight: bold;
         }
@@ -32,20 +33,25 @@
         }
         .title{
             color: rgb(134, 219, 7);
-            font-size:17px;
+            font-size:20px;
             font-weight: bold;
         }
         input,select{
             width: 100%;
-            margin:2px;
+            margin:5px;
             border:1px solid gray;
             border-radius: 5px;
+            padding:5px;
         }
         button{
             color:white;
             background-color: rgb(8, 177, 207);
             font-size: 20px;
-            border-radius: 5px;;
+            border-radius: 10px;
+            padding:3px;
+            border:none;
+            margin:5px;
+            width:150px;
         }
         .leftCaption{
             color:rgb(80, 68, 68);
@@ -73,6 +79,7 @@
 </head>
 <body>
     <div class="container">
+        <br>
         <div class="row">
           <div class="header">Instagram</div>
         </div>
@@ -118,21 +125,31 @@
         </div>
         </div>
         <div class="row">
-            <input type="text" placeholder="Mobile no or email address">
+            <input type="text" placeholder="Mobile number or email address">
         </div>
         <div class="row">
             <input type="text" placeholder="New password">
         </div>
-        <div>
-            <button>Register</button>
+        <div class="row">
+            <button>Sign up</button>
         </div>
     </div>
     <script>
         let str=""
         for(let i=1;i<=31;i++){
-            str+=`<option value=${i}>${i}</option>`
+            str+=`<option>${i}</option>`;
         }
         day.innerHTML=str
+        let str=""
+        for(let i=1;i<=12;i++){
+            str+=`<option >${i}</option>`;
+        }
+        month.innerHTML=str
+        let str=""
+        for(let i=1905;i<=2025;i++){
+            str+=`<option>${i}</option>`;
+        }
+        year.innerHTML=str
     </script>
 </body>
 </html>
