@@ -9,7 +9,7 @@
         .header{
             font-size:45px;
             font-style: oblique;
-            color: rgb(211, 53, 214);
+            color: rgb(104, 14, 105);
             font-weight: bold;
         }
         body{
@@ -26,17 +26,20 @@
         .caption{
             font-size: 15px;
             color:grey;
+            margin:3px;
         }
         .row{
             display: flex;
             justify-content: center;
         }
         .title{
-            color: rgb(134, 219, 7);
+            color: rgb(75, 70, 70);
             font-size:20px;
             font-weight: bold;
+            margin:3px;
         }
-        input,select{
+        input,
+        select{
             width: 100%;
             margin:5px;
             border:1px solid gray;
@@ -59,7 +62,7 @@
             font-size: 15px;
         }
         .qMark {
-        background-color: rgb(134, 219, 7);
+        background-color: rgb(75, 70, 70);
         border-radius: 5px;
         color: white;
         padding-left: 5px;
@@ -78,78 +81,157 @@
     </style>
 </head>
 <body>
+    <br>
+    <div class="row">
+        <div class="header">Instagram</div>
+      </div>
+      <br>
     <div class="container">
-        <br>
-        <div class="row">
-          <div class="header">Instagram</div>
+      <div class="row">
+        <div>
+          <div class="title">Create a new account</div>
+          <div class="caption">It's quick and easy.</div>
         </div>
-       <br>
-        <div class="row">
-          <div>
-            <div class="title">Create a new account</div>
-            <div class="caption">It's quick and easy.</div>
-          </div>
-        </div>
-        <hr />
-        <div class="row">
-            <input type="text" placeholder="Firstname"/>
-            <input type="text" placeholder="surname"/>
-        </div>
-        <div style="text-align: left">
-        <div class="leftCaption">Date of birth:
-            <span class="qMark"><abbr title="Click for more information">?</abbr></span>
-        </div>
-        </div>
-        <div class="row">
-            <select id="day"></select>
-            <select id="month"></select>
-            <select id="year"></select>
-        </div>
-        <div style="text-align:left">
-        <div class="leftCaption">Gender:
-            <span class="qMark"><abbr title="Click for more information">?</abbr></span>
-        </div>
-        </div>
-        <div class="row">
-            <div class="radioClass">
-            <div><label>Female</label></div>
-            <div><input type="radio" name="gender"></div>
-            </div>
-            <div class="radioClass">
-            <div><label>Male</label></div>
-            <div><input type="radio" name="gender"></div>
-            </div>
-            <div class="radioClass">
-            <div><label>Custom</label></div>
-            <div><input type="radio" name="gender"></div>
-        </div>
-        </div>
-        <div class="row">
-            <input type="text" placeholder="Mobile number or email address">
-        </div>
-        <div class="row">
-            <input type="text" placeholder="New password">
-        </div>
-        <div class="row">
-            <button>Sign up</button>
-        </div>
+      </div>
+      <hr />
+      <div id="root"></div>
     </div>
     <script>
-        let str=""
-        for(let i=1;i<=31;i++){
-            str+=`<option>${i}</option>`;
+      const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      const showData = () => {
+        let firstname = document.getElementById("firstname").value;
+        let surname = document.getElementById("surname").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let gender = document.getElementsByName("gender");
+        let pronoun = document.getElementById("prSelect").value;
+        let day = document.getElementById("day").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
+        let dob = `${day}-${month}-${year}`;
+        let g = "";
+        if (gender[0].checked) g = "Female";
+        if (gender[1].checked) g = "Male";
+        if (gender[2].checked) g = pronoun;
+        let str = `
+          <h3>Verify your information</h3>
+          <p>Name:${firstname} ${surname}</p>
+          <p>Email:${email}</p>
+          <p>Password:${password}</p>
+          <p>Gender:${g}</p>
+          <p>Date of Birth:${dob}</p>
+          <button>Confirm</button>
+          <button>Edit</button>
+        </div>
+        `;
+        root.innerHTML = str;
+      };
+
+      const showForm = () => {
+        let str = `
+      
+      <div class="row">
+        <input type="text" id="firstname" placeholder="Firstname" />
+        <input type="text" id="surname" placeholder="Surname" />
+      </div>
+      <div class="row" style="justify-content: start">
+        <div class="leftCaption">
+          Date of Birth<span class="qMark"
+            ><abbr title="Click for more information">?</abbr></span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <select id="day"></select>
+        <select id="month"></select>
+        <select id="year"></select>
+      </div>
+      <div class="row" style="justify-content: start">
+        <div class="leftCaption">
+          Gender<span class="qMark"
+            ><abbr title="Click for more information">?</abbr></span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="radioClass">
+          <div><label> Female</label></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
+        </div>
+        <div class="radioClass">
+          <div><label> Male</label></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
+        </div>
+        <div class="radioClass">
+          <div><label> Custom</label></div>
+          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
+        </div>
+      </div>
+
+     <div class="row">
+      <select id="prSelect" style="display:none">
+        <option value="NA">Select your pronoun</option>
+        <option value="She">She:"Wish her a happy birthday"</option>
+        <option value="He">He:"Wish him a happy birthday"</option>
+        <option value="They">They:"Wish them a happy birthday"</option>
+      </select>
+     </div>
+
+      <div class="row">
+        <input type="text" id="email" placeholder="Mobule number or email address" />
+      </div>
+      <div class="row">
+        <input type="password" id="password" placeholder="New password" />
+      </div>
+      <div class="row">
+        <button onclick='showData()'>Sign Up</button>
+      </div>
+      `;
+        root.innerHTML = str;
+      };
+
+      showForm();
+      let str = "";
+      let dt = new Date()
+      let d = dt.getDate()
+      let m = dt.getMonth()
+      let y = dt.getFullYear()
+      for (let i = 1; i <= 31; i++) {
+        str += `<option ${i === d && "selected"}>${i}</option>`;
+      }
+      day.innerHTML = str;
+      str = "";
+      for (let i = 0; i <= 11; i++) {
+        str += `<option ${i === m && "selected"}>${months[i]}</option>`;
+      }
+      month.innerHTML = str;
+      str = "";
+      for (let i = 1905; i <= 2025; i++) {
+        str += `<option ${i === y && "selected"}>${i}</option>`;
+      }
+      year.innerHTML = str;
+
+      const togglePronoun = () => {
+        let p = document.getElementsByName("gender");
+        if (p[2].checked) {
+          prSelect.style.display = "block";
+        } else {
+          prSelect.style.display = "none";
         }
-        day.innerHTML=str
-        let str=""
-        for(let i=1;i<=12;i++){
-            str+=`<option >${i}</option>`;
-        }
-        month.innerHTML=str
-        let str=""
-        for(let i=1905;i<=2025;i++){
-            str+=`<option>${i}</option>`;
-        }
-        year.innerHTML=str
+      };
     </script>
-</body>
+  </body>
 </html>
