@@ -123,22 +123,21 @@
       let interests="";
       let g = "";
       const showData = () => {
-        let firstname = document.getElementById("firstname").value;
-        let surname = document.getElementById("surname").value;
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;
-        let gender = document.getElementsByName("gender");
-        let pronoun = document.getElementById("prSelect").value;
-        let day = document.getElementById("day").value;
-        let month = document.getElementById("month").value;
-        let year = document.getElementById("year").value;
-        let dob = `${day}-${month}-${year}`;
-        let g = "";
+        firstname = document.getElementById("firstname").value;
+        surname = document.getElementById("surname").value;
+        email = document.getElementById("email").value;
+        password = document.getElementById("password").value;
+        gender = document.getElementsByName("gender");
+        pronoun = document.getElementById("prSelect").value;
+        dd = Number(document.getElementById("day").value);
+        mm = Number(document.getElementById("month").value);
+        yy = Number(document.getElementById("year").value);
+        console.log(dd, mm, yy);
+        let dob = `${dd}-${months[mm]}-${yy}`;
+        g = "";
         if (gender[0].checked) g = "Female";
         if (gender[1].checked) g = "Male";
         if (gender[2].checked) g = pronoun;
-        
-
         let str = `
           <h3>Verify your information</h3>
           <p>Name:${firstname} ${surname}</p>
