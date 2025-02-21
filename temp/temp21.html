@@ -120,8 +120,11 @@
       let mm;
       let yy;
       let pronoun;
-      let interests="";
       let g = "";
+      let sports=false;
+      let movies=false;
+      let travel=false;
+      let music=false;
       const showData = () => {
         firstname = document.getElementById("firstname").value;
         surname = document.getElementById("surname").value;
@@ -132,7 +135,15 @@
         dd = Number(document.getElementById("day").value);
         mm = Number(document.getElementById("month").value);
         yy = Number(document.getElementById("year").value);
-        console.log(dd, mm, yy);
+        sports = document.getElementById("sports").checked;
+        movies = document.getElementById("movies").checked;
+        travel = document.getElementById("travel").checked;
+        music = document.getElementById("music").checked;
+        let strInterests = "";
+        if (sports) strInterests += "Sports ";
+        if (movies) strInterests += "Movies ";
+        if (travel) strInterests += "Travel";
+        if (music) strInterests += "Music ";
         let dob = `${dd}-${months[mm]}-${yy}`;
         g = "";
         if (gender[0].checked) g = "Female";
@@ -145,6 +156,7 @@
           <p>Password:${password}</p>
           <p>Gender:${g}</p>
           <p>Date of Birth:${dob}</p>
+          <p>Interests:${strInterests}</p>
           <button>Confirm</button>
           <button onclick=showForm()>Edit</button>
         </div>
@@ -240,22 +252,23 @@
           >
         </div>
       </div>
+
       <div class="row">
         <div class="radioClass">
           <div><label>Sports</label></div>
-          <div><input type="checkbox" value='' /></div>
+          <div><input type="checkbox" ${sports && "checked"}id='sports' /></div>
         </div>
         <div class="radioClass">
           <div><label>Movies</label></div>
-          <div><input type="checkbox" /></div>
+          <div><input type="checkbox" ${movies && "checked"}id='movies' /></div>
         </div>
         <div class="radioClass">
           <div><label>Travel</label></div>
-          <div><input type="checkbox"/></div>
+          <div><input type="checkbox" ${travel&& "checked"}id='travel/></div>
         </div>
         <div class="radioClass">
           <div><label>Music</label></div>
-          <div><input type="checkbox"></div>
+          <div><input type="checkbox" ${music && "checked"} id='music'></div>
         </div>
       </div>
 
