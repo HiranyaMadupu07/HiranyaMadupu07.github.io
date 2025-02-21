@@ -120,6 +120,7 @@
       let mm;
       let yy;
       let pronoun;
+      let interests="";
       let g = "";
       const showData = () => {
         let firstname = document.getElementById("firstname").value;
@@ -136,6 +137,8 @@
         if (gender[0].checked) g = "Female";
         if (gender[1].checked) g = "Male";
         if (gender[2].checked) g = pronoun;
+        
+
         let str = `
           <h3>Verify your information</h3>
           <p>Name:${firstname} ${surname}</p>
@@ -238,6 +241,25 @@
           >
         </div>
       </div>
+      <div class="row">
+        <div class="radioClass">
+          <div><label>Sports</label></div>
+          <div><input type="checkbox" value='' /></div>
+        </div>
+        <div class="radioClass">
+          <div><label>Movies</label></div>
+          <div><input type="checkbox" /></div>
+        </div>
+        <div class="radioClass">
+          <div><label>Travel</label></div>
+          <div><input type="checkbox"/></div>
+        </div>
+        <div class="radioClass">
+          <div><label>Music</label></div>
+          <div><input type="checkbox"></div>
+        </div>
+      </div>
+
 
       <div class="row">
         <input type="text" value='${email}' id="email" placeholder="Mobule number or email address" />
@@ -277,6 +299,8 @@
           prSelect.style.display = "none";
         }
       };
+
+      
     </script>
   </body>
 </html>
