@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catch the Ball Game</title>
+    <style>
+        canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+<canvas id="gameCanvas" width="480" height="320"></canvas>
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let basket = { x: canvas.width / 2 - 20, y: canvas.height - 20, width: 40, height: 20 };
+    let ball = { x: Math.random() * canvas.width, y: 0, radius: 10, dy: 2 };
+    let points = 0;
+    let rightPressed = false;
+    let leftPressed = false;
+
+    document.addEventListener('keydown', keyDownHandler);
+    document.addEventListener('keyup', keyUpHandler);
+
+    function keyDownHandler(e) {
+        if (e.key == "Right" || e.key == "ArrowRight") {
+            rightPressed = true;
+        } else if (e.key == "Left" || e.key == "ArrowLeft") {
+            leftPressed = true;
+        }
+    }
+
+    function keyUpHandler(e) {
+        if (e.key == "Right" || e.key == "ArrowRight") {
+            rightPressed = false;
+        } else if (e.key == "Left" || e.key == "ArrowLeft") {
+            leftPressed = false;
+        }
+    }
+
+    function drawBasket() {
+        ctx.beginPath();
+        ctx.rect(basket.x, basket.y, basket.width, basket.height);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    function drawBall() {
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#DD9500";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    function drawPoints() {
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "#0095DD";
+        ctx.fillText("Points: " + points, 8, 20);
+    }
+
+    function updateBall() {
+        ball.y += ball.dy;
+        if (ball.y + ball.radius > canvas.height) {
+            if (ball.x > basket.x && ball.x < basket.x + basket.width) {
+                points++;
+                resetBall();
+            } else {
+                resetBall();
+            }
+        }
+    }
+
+    function resetBall() {
+        ball.x = Math.random() * canvas.width;
+        ball.y = 0;
+    }
+
+    function updateBasket() {
+        if (rightPressed && basket.x < canvas.width - basket.width) {
+            basket.x += 7;
+        } else if (leftPressed && basket.x > 0) {
+            basket.x -= 7;
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBasket();
+        drawBall();
+        drawPoints();
+        updateBall();
+        updateBasket();
+        requestAnimationFrame(draw);
+    }
+
+    draw();
+</script>
+</body>
+</html>

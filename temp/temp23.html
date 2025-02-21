@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temp23</title>
+</head>
+<body>
+    <div id="root"></div>
+    <img src="assets/heart.jpg" width="150px" id="heart" />
+    <script>
+        heart.style.position="absolute";
+        let t=0;
+        let l=0;
+        function heartdrop(){
+            t++;
+            if(t>400) {
+                t=1;
+                l=Math.random()*500;
+            }
+            heart.style.top = t + "px";
+            heart.style.left= l + "px";
+            setTimeout(heartdrop,10);
+        }
+        heartdrop()
+    </script>
+</body>
+</html>

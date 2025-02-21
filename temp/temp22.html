@@ -7,9 +7,10 @@
 </head>
 <body>
     <div id="root"></div>
-    <img src="assets/images.jpg" width="200px" height="200px" id="smiley"/>
+    <img src="assets/images.jpg" width="150px" id="smiley" />
+    <img src="assets/basket.jpg" width="200px" height="200px" id="basket"/>
     <script>
-        smiley.style.position="absolute";
+        basket.style.position="absolute";
         let b=document.body;
         let left=0;
         let down=0;
@@ -18,9 +19,23 @@
         if(e.key == "ArrowDown") down += 5;
         if(e.key == "ArrowLeft") left -= 5;
         if(e.key == "ArrowUp") down -= 5;
-        smiley.style.left = left + "px";
-        smiley.style.top = down +"px";
+        basket.style.left = left + "px";
+        basket.style.top = down +"px";
        };
+       smiley.style.position="absolute";
+        let t=0;
+        let l=0;
+        function smileytrap(){
+            t++;
+            if(t>400) {
+                t=1;
+                l=Math.random()*500;
+            }
+            smiley.style.top = t + "px";
+            smiley.style.left= l + "px";
+            setTimeout(smileytrap,10);
+        }
+        smileytrap()
     </script>
 </body>
 </html>
