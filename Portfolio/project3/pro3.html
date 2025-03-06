@@ -1,35 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="index.js"></script>
-  </head>
-  <body>
+    <title>My Flowers Store</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <!-- Authentication Section -->
+    <div id="authContainer">
+        <div id="loginBox">
+            <h1 style="color:rgb(93, 5, 94)">My Store</h1>
+            <h3>Login here</h3>
+            <input type="text" id="loginEmail" placeholder="Email" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button onclick="login()">Login</button><br><br>
+            If not a member!! <a href="javascript:void(0);" onclick="showSignup()">Create Account</a></p>
+        </div>
+
+        <div id="signupBox" style="display: none;">
+            <h1 style="color:rgb(93, 5, 94)">My Store</h1>
+            <h3>Create Account</h3>
+            <input type="text" id="signupName" placeholder="Full Name" />
+            <input type="text" id="signupEmail" placeholder="Email" />
+            <input type="password" id="signupPassword" placeholder="Password" />
+            <input type="date" id="signupDOB" />
+            <button onclick="signup()">Register</button>
+            <p>Already have an account? <a href="javascript:void(0);" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Store Section (Hidden Until Login) -->
     <div class="header">
-      <h1>My Store</h1>
+        <div class="header-left">
+            <h1 style="color:rgb(93, 5, 94)"><i>My Flowers Store</i></h1>
+        </div>
+        <div class="header-middle">
+            <h3 id="welcomeUser" style="color:rgb(93, 5, 94)">Welcome, Guest</h3>
+        </div>
+        <div class="header-right">
+            <h4 id="home" onclick="hideCart()">HOME</h4>
+            <button id="cartButton" onclick="displayCart()">Cart: <span id="items"></span></button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+    
+        
 
-      <div class="menu">
-        <div onclick="hideCart()">Home</div>
-        <div onclick="displayCart()">Cart:<span id="items"></span></div>
-      </div>
+        <hr />
+        <div style="display: flex;justify-content:space-around;">
+        <div class="search-container" style="width:500px">
+            <input type="text" id="searchInput" placeholder="Search" onkeyup="searchProducts()" />
+        </div>
+        <div class="filter-container">
+            <select id="categoryFilter" onchange="filterByCategory()" style="width:300px">
+                <option value="all">Filter</option>
+                <option value="Roses">Roses</option>
+                <option value="Tulips">Tulips</option>
+                <option value="Lilys">Lilys</option>
+                <option value="Sunflowers">Sunflowers</option>
+                <option value="FusionBouquet">FusionBouquet</option>
+            </select>            
+        </div>
+        </div>
+
+        <div id="productBox">
+            <h1 style="text-align: center; color:rgb(93, 5, 94); font-style:italic; text-shadow: 3px 3px rgb(238, 193, 202);">Flowers</h1>
+            <div id="divProducts"></div>
+        </div>
+
+        <div id="cartBox" style="display: none">
+            <h3>My Cart</h3>
+            <div id="divCart"></div><br>
+            <h4>Order Value: <span id="order"></span></h4><br>
+            <button id="checkoutButton" onclick="hideCart()">Close</button>
+            <button id="checkoutButton" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+
+        <div id="checkoutBox" style="display: none">
+            <h3>Order Summary</h3>
+            <div id="orderSummary"></div>
+            <h4>Total: <span id="totalOrder"></span></h4>
+            <button onclick="confirmOrder()">Confirm Order</button>
+            <button onclick="cancelCheckout()">Cancel</button>
+        </div>
+
+        <div id="confirmationBox" style="display: none">
+            <h2>✅ Order Placed Successfully!</h2>
+            <p>Thank you for shopping with us.</p>
+            <button onclick="resetCart()">Return to Home</button>
+        </div>
     </div>
 
-    <hr />
-
-    <div id="productBox">
-      <div id="divProducts"></div>
-    </div>
-
-    <div id="cartBox" style="display: none">
-      <h3>My Cart</h3>
-      <div id="divCart"></div>
-      <h4>Order value:<span id="order"></span></h4>
-      <button onclick="hideCart()">Close</button>
-    </div>
-    <hr />
-    <h4>@Copyright 2025. All rights reserved.</h4>
-  </body>
+</body>
 </html>
